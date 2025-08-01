@@ -1,0 +1,251 @@
+
+## 🧭 FINAL GOAL:
+
+Build a **Java + JDBC + MySQL** project:
+**Apartment Visitor & Parking Management System**
+
+---
+
+## ✅ STEP-BY-STEP BEGINNER GUIDE
+
+---
+
+### 🥇 STEP 1: Learn Java OOP Concepts
+
+📚 **Goal:** Learn Java basics and Object-Oriented Programming (OOP)
+
+#### ✅ What to Learn:
+
+1. Variables, Data Types
+2. Conditions (`if`, `switch`), Loops (`for`, `while`)
+3. **Classes & Objects**
+4. **Inheritance**
+5. **Polymorphism**
+6. **Abstraction & Interfaces**
+7. **Constructors**
+8. Arrays and ArrayLists
+9. File I/O (optional but good)
+
+📌 **Learning Time**: 4–5 days (if focused)
+
+🛠 Resources:
+
+* [W3Schools Java OOP](https://www.w3schools.com/java/java_oop.asp)
+* \[Java Programming on YouTube – Telusko / CodeWithHarry]
+
+---
+
+### ✍️ STEP 2: Understand UML Diagrams
+
+📚 **Goal:** Know how to plan your app visually
+
+#### ✅ What to Learn:
+
+* **Use Case Diagram** → Who can do what?
+* **Class Diagram** → What classes your code will have and their relations
+* (Optional) Sequence Diagram → Order of events
+
+📌 Tool: [https://draw.io](https://draw.io)
+
+📝 Example:
+
+**Use Case Diagram:**
+
+* Actor: Resident → (Register Visitor), (Request Parking)
+* Actor: Security → (Approve Visitor)
+* Actor: Admin → (View Logs)
+
+**Class Diagram:**
+
+```
+User (abstract)
+↑     ↑      ↑
+Resident Security Admin
+↓
+Visitor → VisitLog
+ParkingSlot
+```
+
+✏️ **Draw this in your notebook first!** Understand what classes and actions are needed.
+
+---
+
+### 💻 STEP 3: Install & Setup Java IDE
+
+#### 🛠 Tools You Need:
+
+* Install **Java JDK**: [Java JDK Download](https://www.oracle.com/java/technologies/javase-downloads.html)
+* Install **Eclipse IDE**: [Eclipse Download](https://www.eclipse.org/downloads/)
+* Install **MySQL Workbench** and **MySQL Server**
+
+📌 Search on YouTube: “How to install Eclipse and JDK” if needed.
+
+---
+
+### 📂 STEP 4: Set Up Your Project in Eclipse
+
+#### ✅ Steps:
+
+1. Open Eclipse → New → Java Project → Name: `AVPMSystem`
+2. Inside `src`, create these **packages**:
+
+   * `model` → for classes like `User`, `Resident`, etc.
+   * `dao` → for database-related classes
+   * `service` → for login, parking logic, etc.
+   * `db` → for database connection file
+   * `main` → for Main.java
+
+📂 Your project will look like this:
+
+```
+AVPMSystem
+ └── src
+      ├── model
+      ├── dao
+      ├── service
+      ├── db
+      └── main
+```
+
+---
+
+### 🔧 STEP 5: Create Your Java Files (Empty for Now)
+
+#### Create these classes:
+
+**In `model` package:**
+
+* `User.java` (abstract class)
+* `Resident.java`, `Admin.java`, `Security.java` (extend `User`)
+* `Visitor.java`, `VisitLog.java`, `ParkingSlot.java`
+
+**In `dao` package:**
+
+* `UserDAO.java`
+* `VisitorDAO.java`
+* `ParkingDAO.java`
+
+**In `db` package:**
+
+* `DBConnection.java`
+
+**In `main` package:**
+
+* `Main.java`
+
+Don't worry, just create **empty classes** with class names. You will write code step by step later.
+
+---
+
+### 🛢️ STEP 6: Learn MySQL Basics & Create Database
+
+#### ✅ What to Learn:
+
+1. What is a table, row, column
+
+2. How to write simple queries:
+
+   ```sql
+   CREATE DATABASE avpm;
+   USE avpm;
+
+   CREATE TABLE users (
+     id INT PRIMARY KEY AUTO_INCREMENT,
+     name VARCHAR(100),
+     username VARCHAR(50),
+     password VARCHAR(100),
+     role ENUM('admin', 'resident', 'security')
+   );
+   ```
+
+3. Learn `INSERT`, `SELECT`, `UPDATE`, `DELETE` basics
+
+4. Use **MySQL Workbench** to run SQL commands
+
+---
+
+### 🔌 STEP 7: Learn JDBC (Java DB Connectivity)
+
+📚 **What is JDBC?**
+It's how Java talks to MySQL.
+
+#### ✅ What to Learn:
+
+1. Load JDBC Driver
+2. Connect to DB using:
+
+   ```java
+   Connection con = DriverManager.getConnection(
+       "jdbc:mysql://localhost:3306/avpm", "root", "your_password");
+   ```
+3. Run queries using `Statement` or `PreparedStatement`
+
+📌 Resources:
+YouTube: “JDBC Tutorial Java + MySQL” (by Bro Code, ProgrammingKnowledge)
+
+---
+
+### 🧪 STEP 8: Implement Features One-by-One
+
+Start simple:
+
+1. **Login System**
+2. **Register Visitor (Resident Side)**
+3. **Approve Visitor (Security Side)**
+4. **Request Parking**
+5. **Allocate Parking**
+6. **Admin → View Visitor Logs**
+
+Each feature = one method + one SQL query + simple menu
+
+---
+
+### 📄 STEP 9: Test Your Project
+
+Every time you build one feature:
+
+* Test it from console (Scanner input)
+* Insert sample data into MySQL
+* Print results or logs
+
+---
+
+### 🎁 STEP 10: Project Report & Presentation
+
+For final submission or resume:
+
+* Create UML diagrams in draw\.io
+* Write `README.md`
+* Include screenshots
+* Mention tools and technologies used
+
+---
+
+## 🚦Final Notes
+
+### Tools You’ll Use:
+
+| Tool            | Purpose            |
+| --------------- | ------------------ |
+| Eclipse         | Java coding        |
+| MySQL Workbench | Create DB & tables |
+| Draw\.io        | UML diagrams       |
+| Scanner         | Console input      |
+| JDBC            | Connect Java to DB |
+
+---
+
+## ✅ Summary Roadmap
+
+| Step | Task                             | Time Needed |
+| ---- | -------------------------------- | ----------- |
+| 1    | Learn Java OOP                   | 4–5 days    |
+| 2    | Understand UML                   | 1 day       |
+| 3    | Set up Java project in Eclipse   | 0.5 day     |
+| 4    | Learn MySQL                      | 1 day       |
+| 5    | Learn JDBC                       | 1–2 days    |
+| 6    | Build project feature by feature | 4–5 days    |
+| 7    | Test & Finalize                  | 1 day       |
+
+---
+
